@@ -1,0 +1,21 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    answers.txt                                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/10 09:35:27 by yabejani          #+#    #+#              #
+#    Updated: 2024/06/10 10:17:12 by yabejani         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+$ conda list -n 42AI-yabejani
+
+$ conda list numpy gives detailed info bout the installed version of numpy / $ conda search nummpy (list all available versions of numpy that you can install from your configured channels.)
+
+$ conda remove numpy or $ conda remove -n your_env_name numpy to remove from a specfic environment
+
+$ conda install numpy or $ conda install -n your_env_name numpy to install in a specific environment
+
+$ conda list --export > requirements.txt or $ pip freeze > requirements.txt or $ conda env export (if stored in a .yml you can recreate the env exactly as it is with this command "conda env create -f environment.yml")
