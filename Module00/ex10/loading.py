@@ -6,7 +6,7 @@
 #    By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 17:47:16 by yabejani          #+#    #+#              #
-#    Updated: 2024/06/10 18:15:04 by yabejani         ###   ########.fr        #
+#    Updated: 2024/06/11 10:18:25 by yabejani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ def ft_progress(lst):
         bar_length = 20
         filled_length = int(bar_length * index // total_items)
         bar = '=' * filled_length + '>' + ' ' * (bar_length - filled_length - 1)
-        sys.stdout.write(f'\rETA: {eta:.2f}s [{percentage:.0f}%][{bar}] {index}/{total_items} | elapsed time {elapsed_time:.2f}s')
+        sys.stdout.write(f'\rETA: {eta:.2f}s [{percentage:.0f}%][{bar}] {index + 1}/{total_items} | elapsed time {elapsed_time:.2f}s')
         sys.stdout.flush()
         
         yield item
@@ -37,10 +37,17 @@ def ft_progress(lst):
 
 
 if __name__ == "__main__":
-    listy = range(3333)
+    # listy = range(3333)
+    # ret = 0
+    # for elem in ft_progress(listy):
+    #     ret += elem
+    #     time.sleep(0.001)  # Simulate some processing time
+    # print()
+    # print(ret)
+    listy = range(1000)
     ret = 0
     for elem in ft_progress(listy):
-        ret += elem
-        time.sleep(0.001)  # Simulate some processing time
+        ret += (elem + 3) % 5
+        time.sleep(0.01)
     print()
     print(ret)
